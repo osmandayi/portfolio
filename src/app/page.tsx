@@ -1,5 +1,6 @@
 import About from "@/components/about/About";
 import Archive from "@/components/archive/Archive";
+import Contact from "@/components/contact/Contact";
 import Hero from "@/components/hero/Hero";
 import Navbar from "@/components/navbar/Navbar";
 import Project from "@/components/projects/Project";
@@ -16,6 +17,7 @@ export default function Home() {
           <Archive />
           <About />
           <Project />
+          <Contact />
         </div>
       </main>
     </>
