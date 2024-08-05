@@ -30,8 +30,9 @@ const TAB_DATA = [
     id: "certifications",
     content: (
       <ul className="list-disc pl-2">
-        <li>Google Professional Cloud Developer</li>
-        <li>Cisco</li>
+        <div className="h-5">None Certifications !</div>
+        {/* <li>Google Professional Cloud Developer</li>
+        <li>Cisco</li> */}
       </ul>
     ),
   },
@@ -46,20 +47,25 @@ const About = () => {
     });
   };
 
-  console.log("TAB :", tab);
-
   return (
     <div className="text-white" id="about">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center py-8 px-4">
         <Image alt="" src={"/2.png"} width={500} height={500} />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <p className="text-base lg:text-lg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-            delectus suscipit quas numquam esse repellat fugit ab quod aliquam
-            laudantium? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Illo, molestiae. Lorem ipsum dolor sit amet, consectetur adipisicing
-            elit. Libero quam dicta suscipit est nihil, velit voluptate
-            consequatur recusandae molestias architecto.
+            Zonguldak Bülent Ecevit Üniversitesi&apos;nden mezun bir yazılım
+            geliştiricisiyim. Next.js, TypeScript, JavaScript ve React
+            konularında geniş bir bilgiye sahibim. Teknolojik yenilikleri takip
+            ederek, etkili ve kullanıcı dostu çözümler üretmeye odaklanıyorum.
+            Projelerde kaliteli ve verimli sonuçlar elde etmek için sürekli
+            öğrenme ve gelişmeye önem veriyorum.
+            {/* I am a software developer with
+            a degree from Zonguldak Bülent Ecevit University. I have extensive
+            knowledge in Next.js, TypeScript, JavaScript, and React. I focus on
+            producing effective and user-friendly solutions by keeping up with
+            technological innovations. I emphasize continuous learning and
+            development to achieve high-quality and efficient results in
+            projects. */}
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton

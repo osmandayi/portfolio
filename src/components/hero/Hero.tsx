@@ -1,11 +1,59 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 
+// "Success is the sum of small efforts repeated day in and day out." — Robert Collier
+
+// "Determination is not being discouraged by failure and coming back stronger every time." — Nelson Mandela
+
+// "If you show the determination needed to achieve your dreams, no obstacle can stop you." — Anonymous
+
+// "Working combined with hope creates miracles." — Anonymous
+
+// "The greatest reward of working with determination is the realization of your dreams." — Anonymous
+
+const quotes = [
+  {
+    text: "Başarı, her gün tekrarlanan küçük çabaların toplamıdır.",
+    author: "Robert Collier",
+  },
+  {
+    text: "Azim, başarısızlıktan yılmamak ve her seferinde daha güçlü bir şekilde geri dönmektir.",
+    author: "Nelson Mandela",
+  },
+  {
+    text: "Hayallerinizi gerçekleştirmek için gereken azmi gösterirseniz, hiçbir engel sizi durduramaz.",
+    author: "Anonim",
+  },
+  {
+    text: "Çalışmak, umutla birleştiğinde mucizeler yaratır.",
+    author: "Anonim",
+  },
+  {
+    text: "Azimle çalışmanın en büyük ödülü, hayallerinizin gerçeğe dönüşmesidir.",
+    author: "Anonim",
+  },
+];
+
 const Hero = () => {
+  const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
+  const [animation, setAnimation] = useState("animate-fade-in");
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAnimation("animate-fade-out");
+      setTimeout(() => {
+        setCurrentQuoteIndex((prevIndex) => (prevIndex + 1) % quotes.length);
+        setAnimation("animate-fade-in");
+      }, 1000);
+    }, 10000); // 10 saniye
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section>
       <div className="grid grid-cols-1 md:grid-cols-12">
@@ -38,10 +86,11 @@ const Hero = () => {
               repeat={Infinity}
             />
           </h1>
-          <p className="text-mycolor-100 text-base mb-6 lg:text-lg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem odit
-            quod facilis mollitia tenetur delectus asperiores suscipit ab! Id,
-            ab neque saepe necessitatibus quaerat ratione?
+          <p
+            className={`text-mycolor-100 text-base mb-6 lg:text-lg ${animation}`}
+          >
+            &quot;{quotes[currentQuoteIndex].text}&quot; –{" "}
+            {quotes[currentQuoteIndex].author}
           </p>
           <div className="">
             <Link
@@ -50,8 +99,9 @@ const Hero = () => {
             >
               Hire
             </Link>
-            <Link
-              href={"/"}
+            <a
+              href={"/osman_dayi_fe.pdf"}
+              download
               className="px-1 inline-block py-1 w-full md:w-fit 
               rounded-full bg-gradient-to-br from-mycolor-200 
               to-mycolor-100 text-mycolor-700 text-center mt-3"
@@ -62,7 +112,7 @@ const Hero = () => {
               >
                 Download CV
               </span>
-            </Link>
+            </a>
           </div>
         </motion.div>
 
@@ -80,6 +130,7 @@ const Hero = () => {
             to-mycolor-500 w-[250px] h-[250px] lg:w-[400px] lg:h-[400px]"
           >
             <Image
+              // src={"/png/azetech_2.jpeg"}
               src={"/1.png"}
               alt=""
               className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-full w-[220px] h-[220px] lg:w-[370px] lg:h-[370px]"

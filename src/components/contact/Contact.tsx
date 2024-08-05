@@ -41,30 +41,54 @@ const Contact = () => {
     const resData = await response.json();
 
     if (response.status === 200) {
-      console.log("MESSAGE Success ");
       setEmailSubmitted(true);
     }
   };
 
   return (
     <section id="contact">
-      <div className="grid grid-cols-1 md:grid-cols-2 my-10 gap-5 mt-12 md:mt-24">
+      <div className="grid grid-cols-1 md:grid-cols-2 my-10 gap-10 mt-12 md:mt-24">
         <div className="col-span-1">
           <h5 className="text-mycolor-100 font-semibold mb-4 text-2xl">
             Let&apos;s Connect
+            {/* İletişime Geçelim */}
+            {/* Bana Ulaş */}
           </h5>
           <p className="text-base text-white">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. At incidunt
-            mollitia minus repellendus libero repudiandae autem iusto explicabo
-            totam sequi sapiente architecto obcaecati nisi sunt praesentium
-            aperiam consectetur magnam, numquam perspiciatis? Vero expedita
-            repudiandae laborum autem, sint repellendus minima, officia omnis ut
-            perferendis quam vel, mollitia corrupti asperiores ex quae.
+            Sizinle tanışmak ve projeleriniz hakkında konuşmak benim için büyük
+            bir zevk olacak. Sorularınız, işbirliği teklifleriniz ya da
+            teknoloji üzerine sohbet etmek isterseniz, aşağıdaki iletişim
+            seçenekleri aracılığıyla bana ulaşabilirsiniz. Birlikte neler
+            yapabileceğimizi keşfetmek için sabırsızlanıyorum. İletişime
+            geçmekten çekinmeyin!
+            {/* I would be delighted to connect with you and
+            discuss your projects. If you have any questions, collaboration
+            proposals, or simply want to chat about technology, feel free to
+            reach out through the contact options below. I’m excited to explore
+            what we can achieve together. Don’t hesitate to get in touch! */}
           </p>
           <div className="flex flex-row gap-4 mt-5">
-            <BsGithub className="h-10 w-10 text-white" />
-            <BsLinkedin className="h-10 w-10 text-white" />
-            <BsGoogle className="h-10 w-10 text-white" />
+            <a
+              href="https://github.com/osmandayi"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <BsGithub className="h-10 w-10 text-white" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/osman-d-272a2820b/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <BsLinkedin className="h-10 w-10 text-white" />
+            </a>
+            <a
+              href="mailto:osman.dayi3478@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <BsGoogle className="h-10 w-10 text-white" />
+            </a>
           </div>
         </div>
         <div className="col-span-1">
