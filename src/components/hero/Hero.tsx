@@ -4,6 +4,7 @@ import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import LanguageSelector from "../language/LanguageSelector";
 
 // "Success is the sum of small efforts repeated day in and day out." — Robert Collier
 
@@ -87,7 +88,7 @@ const Hero = () => {
             />
           </h1>
           <p
-            className={`text-mycolor-100 text-base mb-6 lg:text-lg ${animation}`}
+            className={`text-mycolor-100 text-base mb-6 lg:text-lg ${animation} transition-all duration-1000`}
           >
             &quot;{quotes[currentQuoteIndex].text}&quot; –{" "}
             {quotes[currentQuoteIndex].author}
