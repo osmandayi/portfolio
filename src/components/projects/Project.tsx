@@ -4,6 +4,7 @@ import React, { useRef, useState } from "react";
 import ProjectTag from "./ProjectTag";
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
+import { useLanguage } from "@/context/language";
 
 const projectsData = [
   {
@@ -80,6 +81,9 @@ const Project = () => {
   const [tag, setTag] = useState("All");
   const ref = useRef(null);
 
+  const { language } = useLanguage();
+  const { myProjects, all } = language;
+
   const isInView = useInView(ref, { once: true });
 
   const handleTagChange = (newTag: any) => {
@@ -92,14 +96,14 @@ const Project = () => {
   return (
     <section id="projects">
       <h2 className="text-center text-4xl font-semibold mt-4 mb-8 lg:mt-8 lg:mb-12">
-        My Projects
+        {myProjects}
       </h2>
       <div
         className="text-white flex flex-row justify-center 
       items-center gap-5 py-6"
       >
         <ProjectTag
-          name="All"
+          name={all}
           onClick={handleTagChange}
           isSelected={tag === "All"}
         />

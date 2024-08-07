@@ -3,27 +3,46 @@ import Link from "next/link";
 import React, { useState } from "react";
 import NavItem from "./NavItem";
 import { Button } from "../ui/button";
-import { BarChartIcon } from "lucide-react";
 import { HiMiniBars3BottomRight, HiMiniBars4 } from "react-icons/hi2";
 import MobileMenu from "./MobileMenu";
-
-const navLinks = [
-  {
-    title: "About",
-    path: "#about",
-  },
-  {
-    title: "Projects",
-    path: "#projects",
-  },
-  {
-    title: "Contact",
-    path: "#contact",
-  },
-];
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../ui/select";
+import Image from "next/image";
+import { useLanguage } from "@/context/language";
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const { selectedValue, setSelectedValue, language } = useLanguage();
+  const { about, projects, contact } = language;
+
+  const navLinks = [
+    {
+      title: about,
+      path: "#about",
+    },
+    {
+      title: projects,
+      path: "#projects",
+    },
+    {
+      title: contact,
+      path: "#contact",
+    },
+  ];
+
+  const handleChange = (value: string) => {
+    setSelectedValue(value);
+  };
+
+  const ClosedFunc = () => {
+    setNavbarOpen(false);
+  };
+
   return (
     <nav className="bg-mycolor-400 sticky flex w-full mx-auto border-b border-mycolor-300 top-0 left-0 right-0 z-10 bg-opacity-85">
       <div className="flex container lg:py-4 py-2 px-4 flex-wrap items-center justify-between">
@@ -55,8 +74,37 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
+        <Select value={selectedValue} onValueChange={handleChange}>
+          <SelectTrigger className="w-[180px]">
+            <SelectValue placeholder="Dil Seçiniz" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="turkce">
+              <div className="flex items-center gap-5">
+                <Image
+                  alt="Türkçe"
+                  width={25}
+                  height={25}
+                  src={"/svg/flags/ic_flag_tr.svg"}
+                />{" "}
+                <span>Türkçe</span>
+              </div>
+            </SelectItem>
+            <SelectItem value="english">
+              <div className="flex items-center gap-5">
+                <Image
+                  alt="English"
+                  width={25}
+                  height={25}
+                  src={"/svg/flags/ic_flag_en.svg"}
+                />{" "}
+                <span>English</span>
+              </div>
+            </SelectItem>
+          </SelectContent>
+        </Select>
       </div>
-      {navbarOpen && <MobileMenu links={navLinks} />}
+      {navbarOpen && <MobileMenu links={navLinks} closedModal={ClosedFunc} />}
     </nav>
   );
 };

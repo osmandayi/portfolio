@@ -7,9 +7,24 @@ import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
+import { useLanguage } from "@/context/language";
 
 const Contact = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
+
+  const { language } = useLanguage();
+  const {
+    letsConnect,
+    letsConnectDesc,
+    yourEmail,
+    yourEmailPlaceholder,
+    subject,
+    message,
+    messagePlaceholder,
+    sendMessage,
+    headsUp,
+    headsUpMessage,
+  } = language;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -48,25 +63,13 @@ const Contact = () => {
   return (
     <section id="contact">
       <div className="grid grid-cols-1 md:grid-cols-2 my-10 gap-10 mt-12 md:mt-24">
-        <div className="col-span-1">
+        <div className="col-span-1 flex flex-col gap-3">
           <h5 className="text-mycolor-100 font-semibold mb-4 text-2xl">
-            Let&apos;s Connect
+            {letsConnect}
             {/* İletişime Geçelim */}
             {/* Bana Ulaş */}
           </h5>
-          <p className="text-base text-white">
-            Sizinle tanışmak ve projeleriniz hakkında konuşmak benim için büyük
-            bir zevk olacak. Sorularınız, işbirliği teklifleriniz ya da
-            teknoloji üzerine sohbet etmek isterseniz, aşağıdaki iletişim
-            seçenekleri aracılığıyla bana ulaşabilirsiniz. Birlikte neler
-            yapabileceğimizi keşfetmek için sabırsızlanıyorum. İletişime
-            geçmekten çekinmeyin!
-            {/* I would be delighted to connect with you and
-            discuss your projects. If you have any questions, collaboration
-            proposals, or simply want to chat about technology, feel free to
-            reach out through the contact options below. I’m excited to explore
-            what we can achieve together. Don’t hesitate to get in touch! */}
-          </p>
+          <p className="text-base text-white">{letsConnectDesc}</p>
           <div className="flex flex-row gap-4 mt-5">
             <a
               href="https://github.com/osmandayi"
@@ -95,44 +98,41 @@ const Contact = () => {
           {emailSubmitted ? (
             <Alert className="bg-green-600 text-white">
               <Terminal className="h-4 w-4" />
-              <AlertTitle>Heads up!</AlertTitle>
-              <AlertDescription>
-                You can add components and dependencies to your app using the
-                cli.
-              </AlertDescription>
+              <AlertTitle>{headsUp}</AlertTitle>
+              <AlertDescription>{headsUpMessage}</AlertDescription>
             </Alert>
           ) : (
             <form action="" className="flex flex-col" onSubmit={handleSubmit}>
               <div className="mb-6 text-white">
-                <Label className="">Your Email</Label>
+                <Label className="">{yourEmail}</Label>
                 <Input
                   type="email"
                   name="email"
-                  placeholder="Email"
+                  placeholder={yourEmailPlaceholder}
                   required
                   className="bg-mycolor-600 mt-2"
                 />
               </div>
               <div className="mb-6 text-white">
-                <Label className="">Subject</Label>
+                <Label className="">{subject}</Label>
                 <Input
                   type="text"
                   name="subject"
-                  placeholder="Subject"
+                  placeholder={subject}
                   required
                   className="bg-mycolor-600 mt-2"
                 />
               </div>
               <div className="mb-6 text-white">
-                <Label className="">Message</Label>
+                <Label className="">{message}</Label>
                 <Textarea
                   className="bg-mycolor-600 mt-2"
                   name="message"
-                  placeholder="Type your message here."
+                  placeholder={messagePlaceholder}
                   required
                 />
               </div>
-              <Button type="submit">Send Message</Button>
+              <Button type="submit">{sendMessage}</Button>
             </form>
           )}
         </div>

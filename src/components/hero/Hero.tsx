@@ -4,44 +4,36 @@ import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import LanguageSelector from "../language/LanguageSelector";
-
-// "Success is the sum of small efforts repeated day in and day out." — Robert Collier
-
-// "Determination is not being discouraged by failure and coming back stronger every time." — Nelson Mandela
-
-// "If you show the determination needed to achieve your dreams, no obstacle can stop you." — Anonymous
-
-// "Working combined with hope creates miracles." — Anonymous
-
-// "The greatest reward of working with determination is the realization of your dreams." — Anonymous
-
-const quotes = [
-  {
-    text: "Başarı, her gün tekrarlanan küçük çabaların toplamıdır.",
-    author: "Robert Collier",
-  },
-  {
-    text: "Azim, başarısızlıktan yılmamak ve her seferinde daha güçlü bir şekilde geri dönmektir.",
-    author: "Nelson Mandela",
-  },
-  {
-    text: "Hayallerinizi gerçekleştirmek için gereken azmi gösterirseniz, hiçbir engel sizi durduramaz.",
-    author: "Anonim",
-  },
-  {
-    text: "Çalışmak, umutla birleştiğinde mucizeler yaratır.",
-    author: "Anonim",
-  },
-  {
-    text: "Azimle çalışmanın en büyük ödülü, hayallerinizin gerçeğe dönüşmesidir.",
-    author: "Anonim",
-  },
-];
+import { useLanguage } from "@/context/language";
 
 const Hero = () => {
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
   const [animation, setAnimation] = useState("animate-fade-in");
+  const { language } = useLanguage();
+  const { quote1, quote2, quote3, quote4, quote5, hire, cv } = language;
+
+  const quotes = [
+    {
+      text: quote1,
+      author: "Robert Collier",
+    },
+    {
+      text: quote2,
+      author: "Nelson Mandela",
+    },
+    {
+      text: quote3,
+      author: "Anonim",
+    },
+    {
+      text: quote4,
+      author: "Anonim",
+    },
+    {
+      text: quote5,
+      author: "Anonim",
+    },
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -53,7 +45,7 @@ const Hero = () => {
     }, 10000); // 10 saniye
 
     return () => clearInterval(interval);
-  }, []);
+  }, [quotes.length]);
 
   return (
     <section>
@@ -98,7 +90,7 @@ const Hero = () => {
               href={"/#contact"}
               className="mr-0 md:mr-4 px-6 inline-block py-3 w-full md:w-fit rounded-full bg-gradient-to-br from-mycolor-200 to-mycolor-100 text-white text-center"
             >
-              Hire
+              {hire}
             </Link>
             <a
               href={"/osman_dayi_fe.pdf"}
@@ -111,7 +103,7 @@ const Hero = () => {
                 className="block bg-mycolor-300 rounded-full 
               px-5 py-2"
               >
-                Download CV
+                {cv}
               </span>
             </a>
           </div>

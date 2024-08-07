@@ -10,7 +10,7 @@ const NavItem = ({ href, title }: NavItemsProps) => {
   return (
     <Link
       href={href}
-      className="block py-2 pl-3 text-mycolor-700 hover:text-white/80 text-xl"
+      className="block py-3 pl-3 text-mycolor-700 hover:text-white/80 text-3xl"
     >
       {title}
     </Link>
