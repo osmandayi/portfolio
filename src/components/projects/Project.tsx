@@ -42,6 +42,33 @@ const projectsData = [
     gitUrl: "https://github.com/osmandayi/Netflix-Clone-FE",
     previewUrl: "https://netflix-clone-fe.vercel.app/",
   },
+  {
+    id: 5,
+    title: "Dijirack",
+    description: "Dijirack Monitoring System",
+    image: "/projects/demo_dijirack.png",
+    tag: ["All", "Frontend"],
+    gitUrl: "/",
+    previewUrl: "https://demo.dijirack.com/",
+  },
+  {
+    id: 6,
+    title: "IFI",
+    description: "IFI Waste Management & Cleaning Service LTD",
+    image: "/projects/demo_ifi.png",
+    tag: ["All", "Frontend"],
+    gitUrl: "/",
+    previewUrl: "/",
+  },
+  {
+    id: 7,
+    title: "Medscript",
+    description: "Medscript for Health",
+    image: "/projects/medscript.png",
+    tag: ["All", "Frontend"],
+    gitUrl: "/",
+    previewUrl: "http://medscript.dijirack.com/",
+  },
 ];
 
 const cardVariants = {
