@@ -23,7 +23,7 @@ const ProjectCard = ({
     <>
       <div className="h-full rounded-lg relative group flex flex-col">
         <div
-          className="flex-grow h-56 md:h-72 max-h-56 md:max-h-72 rounded-t-lg relative group"
+          className="flex-grow h-56 md:h-72 max-h-56 md:max-h-72 rounded-lg relative group"
           style={{ background: `url(${image})`, backgroundSize: "cover" }}
         >
           <div className="items-center justify-center absolute top-0 left-0 w-full h-full bg-mycolor-400 bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-75 group-hover:gap-3 transition-all duration-700">
