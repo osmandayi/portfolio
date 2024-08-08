@@ -6,72 +6,6 @@ import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import { useLanguage } from "@/context/language";
 
-const projectsData = [
-  {
-    id: 1,
-    title: "Coffe Website",
-    description: "Do you wanna coffe?",
-    image: "/projects/coffe-pub.png",
-    tag: ["All", "Frontend"],
-    gitUrl: "https://github.com/osmandayi/CoffePub",
-    previewUrl: "https://coffe-pub.vercel.app/",
-  },
-  {
-    id: 2,
-    title: "SAAS",
-    description: "Software as a Service",
-    image: "/projects/sas.png",
-    tag: ["All", "Frontend"],
-    gitUrl: "https://github.com/osmandayi/30Temmuz",
-    previewUrl: "https://30-temmuz.vercel.app/",
-  },
-  {
-    id: 3,
-    title: "Ecommerce NextJS",
-    description: "Authentication amd CRUD operations",
-    image: "/projects/online-commerce-and-grocery.png",
-    tag: ["All", "FullStack"],
-    gitUrl: "https://github.com/osmandayi/E-Commerce",
-    previewUrl: "https://online-commerce-and-grocery.vercel.app/",
-  },
-  {
-    id: 4,
-    title: "Netflix Clone",
-    description: "Watch a film",
-    image: "/projects/netflix-clone-fe.png",
-    tag: ["All", "Frontend"],
-    gitUrl: "https://github.com/osmandayi/Netflix-Clone-FE",
-    previewUrl: "https://netflix-clone-fe.vercel.app/",
-  },
-  {
-    id: 5,
-    title: "Dijirack",
-    description: "Dijirack Monitoring System",
-    image: "/projects/demo_dijirack.png",
-    tag: ["All", "Frontend"],
-    gitUrl: "/",
-    previewUrl: "https://demo.dijirack.com/",
-  },
-  {
-    id: 6,
-    title: "IFI",
-    description: "IFI Waste Management & Cleaning Service LTD",
-    image: "/projects/demo_ifi.png",
-    tag: ["All", "Frontend"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 7,
-    title: "Medscript",
-    description: "Medscript for Health",
-    image: "/projects/medscript.png",
-    tag: ["All", "Frontend"],
-    gitUrl: "/",
-    previewUrl: "http://medscript.dijirack.com/",
-  },
-];
-
 const cardVariants = {
   initial: { y: 50, opacity: 0 },
   animate: { y: 0, opacity: 1 },
@@ -82,9 +16,91 @@ const Project = () => {
   const ref = useRef(null);
 
   const { language } = useLanguage();
-  const { myProjects, all } = language;
+  const {
+    myProjects,
+    coffeProjectDesc,
+    coffeProjectTitle,
+    saasProjectDesc,
+    saasProjectTitle,
+    eCommerceProjectDesc,
+    eCommerceProjectTitle,
+    netflixProjectDesc,
+    netflixProjectTitle,
+    dijirackProjectDesc,
+    dijirackProjectTitle,
+    ifiProjectDesc,
+    ifiProjectTitle,
+    medScriptProjectDesc,
+    medScriptProjectTitle,
+  } = language;
 
   const isInView = useInView(ref, { once: true });
+
+  const projectsData = [
+    {
+      id: 1,
+      title: coffeProjectTitle,
+      description: coffeProjectDesc,
+      image: "/projects/coffe-pub.png",
+      tag: ["All", "Frontend"],
+      gitUrl: "https://github.com/osmandayi/CoffePub",
+      previewUrl: "https://coffe-pub.vercel.app/",
+    },
+    {
+      id: 2,
+      title: saasProjectTitle,
+      description: saasProjectDesc,
+      image: "/projects/sas.png",
+      tag: ["All", "Frontend"],
+      gitUrl: "https://github.com/osmandayi/30Temmuz",
+      previewUrl: "https://30-temmuz.vercel.app/",
+    },
+    {
+      id: 3,
+      title: eCommerceProjectTitle,
+      description: eCommerceProjectDesc,
+      image: "/projects/online-commerce-and-grocery.png",
+      tag: ["All", "FullStack"],
+      gitUrl: "https://github.com/osmandayi/E-Commerce",
+      previewUrl: "https://online-commerce-and-grocery.vercel.app/",
+    },
+    {
+      id: 4,
+      title: netflixProjectTitle,
+      description: netflixProjectDesc,
+      image: "/projects/netflix-clone-fe.png",
+      tag: ["All", "Frontend"],
+      gitUrl: "https://github.com/osmandayi/Netflix-Clone-FE",
+      previewUrl: "https://netflix-clone-fe.vercel.app/",
+    },
+    {
+      id: 5,
+      title: dijirackProjectTitle,
+      description: dijirackProjectDesc,
+      image: "/projects/demo_dijirack.png",
+      tag: ["All", "Frontend"],
+      gitUrl: "/",
+      previewUrl: "https://demo.dijirack.com/",
+    },
+    {
+      id: 6,
+      title: ifiProjectTitle,
+      description: ifiProjectDesc,
+      image: "/projects/demo_ifi.png",
+      tag: ["All", "Frontend"],
+      gitUrl: "/",
+      previewUrl: "/",
+    },
+    {
+      id: 7,
+      title: medScriptProjectTitle,
+      description: medScriptProjectDesc,
+      image: "/projects/medscript.png",
+      tag: ["All", "Frontend"],
+      gitUrl: "/",
+      previewUrl: "http://medscript.dijirack.com/",
+    },
+  ];
 
   const handleTagChange = (newTag: any) => {
     setTag(newTag);
@@ -103,7 +119,7 @@ const Project = () => {
       items-center gap-5 py-6"
       >
         <ProjectTag
-          name={all}
+          name={"All"}
           onClick={handleTagChange}
           isSelected={tag === "All"}
         />
