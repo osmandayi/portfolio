@@ -27,25 +27,31 @@ const ProjectCard = ({
       >
         <div className="items-center justify-center absolute top-0 left-0 w-full h-full bg-mycolor-400 bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-75 group-hover:gap-3 transition-all duration-700">
           <Link
-            target="_blank"
+            target={`${gitUrl !== "/" ? "_blank" : ""}`}
             href={gitUrl}
-            className="border-2 relative rounded-full h-14 w-14 border-white/50"
+            className={`border-2 relative rounded-full h-14 w-14 ${
+              gitUrl === "/" ? "border-error/50" : "border-success/50"
+            }`}
           >
             <Code
               className="h-10 w-10 text-white/80 absolute top-1/2 left-1/2
           cursor-pointer transform -translate-x-1/2 -translate-y-1/2 
           group-hover:text-white/80"
+              color={`${gitUrl === "/" ? "#ff5252" : "#52ff74"}`}
             />
           </Link>
           <Link
-            target="_blank"
+            target={`${previewUrl !== "/" ? "_blank" : ""}`}
             href={previewUrl}
-            className="border-2 relative rounded-full h-14 w-14 border-white/50"
+            className={`border-2 relative rounded-full h-14 w-14 ${
+              previewUrl === "/" ? "border-error/50" : "border-success/50"
+            }`}
           >
             <EyeIcon
               className="h-10 w-10 text-white/80 absolute top-1/2 left-1/2
           cursor-pointer transform -translate-x-1/2 -translate-y-1/2 
           group-hover:text-white/80"
+              color={`${previewUrl === "/" ? "#ff5252" : "#52ff74"}`}
             />
           </Link>
         </div>

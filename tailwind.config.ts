@@ -36,6 +36,10 @@ const config = {
           700: "#F4F4F4",
         }
       },
+      borderColor: {
+        success: "#52ff74",
+        error: "#ff5252",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
