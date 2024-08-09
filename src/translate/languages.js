@@ -58,6 +58,7 @@ export const languages = [
         ifiProjectTitle: 'IFI Atık Toplama',
         medScriptProjectDesc: 'Bu proje, ilaçların birbirleriyle olan potansiyel yan etkileşimlerini analiz ederek güvenli bir kullanım sağlar.',
         medScriptProjectTitle: 'Medscript',
+        anonymous: 'Anonim',
     },
     {
         id: 2,
@@ -118,5 +119,6 @@ export const languages = [
         ifiProjectTitle: 'IFI Waste Collection',
         medScriptProjectDesc: 'This project analyzes potential interactions between medications, ensuring safe usage.',
         medScriptProjectTitle: 'Medscript',
+        anonymous: 'Anonymous',
     },
 ]

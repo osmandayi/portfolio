@@ -10,7 +10,8 @@ const Hero = () => {
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
   const [animation, setAnimation] = useState("animate-fade-in");
   const { language } = useLanguage();
-  const { quote1, quote2, quote3, quote4, quote5, hire, cv } = language;
+  const { quote1, quote2, quote3, quote4, quote5, anonymous, hire, cv } =
+    language;
 
   const quotes = [
     {
@@ -23,15 +24,15 @@ const Hero = () => {
     },
     {
       text: quote3,
-      author: "Anonim",
+      author: anonymous,
     },
     {
       text: quote4,
-      author: "Anonim",
+      author: anonymous,
     },
     {
       text: quote5,
-      author: "Anonim",
+      author: anonymous,
     },
   ];
 
