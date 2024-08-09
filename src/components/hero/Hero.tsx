@@ -124,7 +124,7 @@ const Hero = () => {
           >
             <Image
               // src={"/png/azetech_2.jpeg"}
-              src={"/1.png"}
+              src={"/jpeg/smile_bust.jpeg"}
               alt=""
               className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-full w-[220px] h-[220px] lg:w-[370px] lg:h-[370px]"
               width={370}
