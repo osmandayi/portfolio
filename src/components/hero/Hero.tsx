@@ -118,19 +118,17 @@ const Hero = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <div
-            className="relative rounded-full 
-            bg-gradient-to-bl from-mycolor-100 
-            to-mycolor-500 w-[250px] h-[250px] lg:w-[400px] lg:h-[400px]"
-          >
-            <Image
-              // src={"/png/azetech_2.jpeg"}
-              src={"/jpeg/smile_bust.jpeg"}
-              alt=""
-              className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-full w-[220px] h-[220px] lg:w-[370px] lg:h-[370px]"
-              width={370}
-              height={370}
-            />
+          <div className="relative rounded-full bg-gradient-to-bl from-mycolor-100 to-mycolor-500 w-[250px] h-[250px] lg:w-[400px] lg:h-[400px]">
+            <div className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-[220px] h-[220px] lg:w-[370px] lg:h-[370px]">
+              <Image
+                // src={"/png/azetech_2.jpeg"}
+                src={"/jpeg/smile_bust.jpeg"}
+                alt=""
+                className="rounded-full"
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
           </div>
         </motion.div>
       </div>
