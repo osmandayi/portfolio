@@ -75,29 +75,29 @@ const Navbar = () => {
           </ul>
         </div>
         <Select value={selectedValue} onValueChange={handleChange}>
-          <SelectTrigger className="w-[180px]">
+          <SelectTrigger className="w-[180px]" aria-label="Dil Seçiniz">
             <SelectValue placeholder="Dil Seçiniz" />
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="turkce">
               <div className="flex items-center gap-5">
                 <Image
-                  alt="Türkçe"
+                  alt="Türk bayrağı"
                   width={25}
                   height={25}
                   src={"/svg/flags/ic_flag_tr.svg"}
-                />{" "}
+                />
                 <span>Türkçe</span>
               </div>
             </SelectItem>
             <SelectItem value="english">
               <div className="flex items-center gap-5">
                 <Image
-                  alt="English"
+                  alt="English flag"
                   width={25}
                   height={25}
                   src={"/svg/flags/ic_flag_en.svg"}
-                />{" "}
+                />
                 <span>English</span>
               </div>
             </SelectItem>

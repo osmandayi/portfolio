@@ -64,17 +64,18 @@ const Contact = () => {
     <section id="contact">
       <div className="grid grid-cols-1 md:grid-cols-2 my-10 gap-10 mt-12 md:mt-24">
         <div className="col-span-1 flex flex-col gap-3">
-          <h5 className="text-mycolor-100 font-semibold mb-4 text-2xl">
+          <h2 className="text-mycolor-100 font-semibold mb-4 text-2xl">
             {letsConnect}
             {/* İletişime Geçelim */}
             {/* Bana Ulaş */}
-          </h5>
+          </h2>
           <p className="text-base text-white">{letsConnectDesc}</p>
           <div className="flex flex-row gap-4 mt-5">
             <a
               href="https://github.com/osmandayi"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub profile"
             >
               <BsGithub className="h-10 w-10 text-white" />
             </a>
@@ -82,6 +83,7 @@ const Contact = () => {
               href="https://www.linkedin.com/in/osman-d-272a2820b/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn profile"
             >
               <BsLinkedin className="h-10 w-10 text-white" />
             </a>
@@ -89,6 +91,7 @@ const Contact = () => {
               href="mailto:osman.dayi3478@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Send email to Osman"
             >
               <BsGoogle className="h-10 w-10 text-white" />
             </a>
