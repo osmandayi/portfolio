@@ -54,16 +54,17 @@ const Navbar = () => {
         </Link>
 
         <div className="block md:hidden">
-          {!navbarOpen ? (
-            <Button onClick={() => setNavbarOpen(true)}>
-              <HiMiniBars4 className="h-5 w-5" />
-            </Button>
-          ) : (
-            <Button onClick={() => setNavbarOpen(false)}>
-              <HiMiniBars3BottomRight className="h-5 w-5" />
-            </Button>
-          )}
+        {!navbarOpen ? (
+          <Button onClick={() => setNavbarOpen(true)} aria-label="Open navigation">
+            <HiMiniBars4 className="h-5 w-5" />
+          </Button>
+        ) : (
+          <Button onClick={() => setNavbarOpen(false)} aria-label="Close navigation">
+            <HiMiniBars3BottomRight className="h-5 w-5" />
+          </Button>
+        )}
         </div>
+
 
         <div className="hidden md:block md:w-auto">
           <ul className="flex p-4 md:flex-row mt-2 md:space-x-5">
