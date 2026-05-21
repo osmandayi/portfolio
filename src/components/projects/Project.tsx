@@ -106,7 +106,7 @@ const Project = () => {
     setTag(newTag);
   };
   const filteredProject = projectsData.filter((project) =>
-    project.tag.includes(tag)
+    project.tag.includes(tag),
   );
 
   return (
