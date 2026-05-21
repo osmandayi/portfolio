@@ -12,6 +12,7 @@ const LanguageSelector = () => {
 
   const handleLanguageChange = (lang: any) => {
     setSelectedLanguage(lang);
+    // Dil değişimi işlemleri burada yapılabilir (örn. locale değişimi)
   };
 
   return (

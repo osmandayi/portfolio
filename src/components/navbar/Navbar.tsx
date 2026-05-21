@@ -50,26 +50,21 @@ const Navbar = () => {
           href={"/"}
           className="text-2xl md:text-4xl text-mycolor-700 font-semibold font-pacifico"
         >
-          Osman Dayi
+          Usman Dayi
         </Link>
 
         <div className="block md:hidden">
-          {!navbarOpen ? (
-            <Button
-              onClick={() => setNavbarOpen(true)}
-              aria-label="Open navigation"
-            >
-              <HiMiniBars4 className="h-5 w-5" />
-            </Button>
-          ) : (
-            <Button
-              onClick={() => setNavbarOpen(false)}
-              aria-label="Close navigation"
-            >
-              <HiMiniBars3BottomRight className="h-5 w-5" />
-            </Button>
-          )}
+        {!navbarOpen ? (
+          <Button onClick={() => setNavbarOpen(true)} aria-label="Open navigation">
+            <HiMiniBars4 className="h-5 w-5" />
+          </Button>
+        ) : (
+          <Button onClick={() => setNavbarOpen(false)} aria-label="Close navigation">
+            <HiMiniBars3BottomRight className="h-5 w-5" />
+          </Button>
+        )}
         </div>
+
 
         <div className="hidden md:block md:w-auto">
           <ul className="flex p-4 md:flex-row mt-2 md:space-x-5">
@@ -81,37 +76,30 @@ const Navbar = () => {
           </ul>
         </div>
         <Select value={selectedValue} onValueChange={handleChange}>
-          <SelectTrigger
-            className="w-[70px] [&_.lang-name]:hidden"
-            aria-label="Dil Seçiniz"
-          >
-            <SelectValue placeholder="Dil" />
+          <SelectTrigger className="w-[180px]" aria-label="Dil Seçiniz">
+            <SelectValue placeholder="Dil Seçiniz" />
           </SelectTrigger>
-
           <SelectContent>
             <SelectItem value="turkce">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-5">
                 <Image
                   alt="Türk bayrağı"
                   width={25}
                   height={25}
                   src={"/svg/flags/ic_flag_tr.svg"}
-                  className=""
                 />
-                <span className="lang-name font-medium">Türkçe</span>
+                <span>Türkçe</span>
               </div>
             </SelectItem>
-
             <SelectItem value="english">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-5">
                 <Image
                   alt="English flag"
                   width={25}
                   height={25}
                   src={"/svg/flags/ic_flag_en.svg"}
-                  className=""
                 />
-                <span className="lang-name font-medium">English</span>
+                <span>English</span>
               </div>
             </SelectItem>
           </SelectContent>
