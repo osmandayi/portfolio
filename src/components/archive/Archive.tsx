@@ -8,6 +8,42 @@ const AnimatedNumbers = dynamic(() => import("react-animated-numbers"), {
   ssr: false,
 });
 
+interface ExperienceData {
+  value: number;
+  postfix: string;
+}
+
+function getExperienceYears(startDateStr: string): ExperienceData {
+  const parts = startDateStr.split(/[.-]/);
+  const day = parseInt(parts[0], 10);
+  const month = parseInt(parts[1], 10) - 1;
+  const year = parseInt(parts[2], 10);
+
+  const startDate = new Date(year, month, day);
+  const today = new Date();
+
+  let monthsDiff =
+    (today.getFullYear() - startDate.getFullYear()) * 12 +
+    (today.getMonth() - startDate.getMonth());
+
+  if (today.getDate() < startDate.getDate()) {
+    monthsDiff--;
+  }
+
+  if (monthsDiff < 0) return { value: 0, postfix: "" };
+
+  const years = Math.floor(monthsDiff / 12);
+  const remainingMonths = monthsDiff % 12;
+
+  if (remainingMonths === 0) {
+    return { value: years, postfix: "" };
+  } else if (remainingMonths >= 1 && remainingMonths <= 9) {
+    return { value: years, postfix: "+" };
+  } else {
+    return { value: years + 1, postfix: "" };
+  }
+}
+
 const Archive = () => {
   const { language } = useLanguage();
   const { projects, users, awards, years } = language;
@@ -32,7 +68,7 @@ const Archive = () => {
     },
     {
       metric: years,
-      value: "3",
+      ...getExperienceYears("02-01-2023"),
       icon: FiClock,
     },
   ];
@@ -59,7 +95,7 @@ const Archive = () => {
                     type: "spring",
                     duration: index + 0.3,
                   })}
-                  animateToNumber={parseInt(archive.value)}
+                  animateToNumber={Number(archive.value)}
                   className="text-white font-semibold"
                   fontStyle={{
                     fontSize: 40,
