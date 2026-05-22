@@ -68,7 +68,7 @@ export const languages = [
         switchNewTooltip: "Yeni sürüme geç",
         switchNewTitle: "Yeni sürüme geçilsin mi?",
         switchNewBody: "Modern arayüzlü yeni portfolyoya yönlendirileceksiniz. Devam edilsin mi?",
-        switchNewConfirm: "Evet, götür",
+        switchNewConfirm: "Evet, git",
         switchNewCancel: "İptal",
     },
     {

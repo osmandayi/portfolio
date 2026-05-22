@@ -31,7 +31,7 @@ export default function SwitchToNewModal({
         </button>
         <button
           onClick={goNew}
-          className="rounded-md bg-mycolor-100 px-4 py-2 text-sm font-medium text-mycolor-400 transition hover:bg-mycolor-100/90"
+          className="rounded-md bg-mycolor-100 px-4 py-2 text-sm font-medium text-mycolor-700 transition hover:bg-mycolor-100/90"
         >
           {language.switchNewConfirm}
         </button>
