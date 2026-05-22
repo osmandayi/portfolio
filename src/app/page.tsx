@@ -7,6 +7,7 @@ import Navbar from "@/components/navbar/Navbar";
 import Project from "@/components/projects/Project";
 import { LanguageProvider } from "@/context/language";
 import LegacyOptInModal from "@/components/modals/LegacyOptInModal";
+import FloatingSwitchButton from "@/components/modals/FloatingSwitchButton";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
           </div>
           <Footer />
         </main>
+        <FloatingSwitchButton />
         <LegacyOptInModal />
       </LanguageProvider>
     </>

@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import NavItem from "./NavItem";
 import { Button } from "../ui/button";
 import { HiMiniBars3BottomRight, HiMiniBars4 } from "react-icons/hi2";
-import { Sparkles } from "lucide-react";
 import MobileMenu from "./MobileMenu";
 import {
   Select,
@@ -15,11 +14,9 @@ import {
 } from "../ui/select";
 import Image from "next/image";
 import { useLanguage } from "@/context/language";
-import SwitchToNewModal from "../modals/SwitchToNewModal";
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
-  const [switchOpen, setSwitchOpen] = useState(false);
   const { selectedValue, setSelectedValue, language } = useLanguage();
   const { about, projects, contact } = language;
 
@@ -83,15 +80,6 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-        <button
-          onClick={() => setSwitchOpen(true)}
-          aria-label={language.switchNewTooltip}
-          title={language.switchNewTooltip}
-          className="mr-2 inline-flex h-9 items-center gap-1.5 rounded-md border border-mycolor-100/40 bg-mycolor-100/10 px-3 text-sm font-medium text-mycolor-100 transition hover:bg-mycolor-100/20"
-        >
-          <Sparkles className="h-4 w-4" />
-          <span className="hidden sm:inline">{language.switchNewTooltip}</span>
-        </button>
         <Select value={selectedValue} onValueChange={handleChange}>
           <SelectTrigger
             className="w-[70px] [&_.lang-name]:hidden"
@@ -130,7 +118,6 @@ const Navbar = () => {
         </Select>
       </div>
       {navbarOpen && <MobileMenu links={navLinks} closedModal={ClosedFunc} />}
-      <SwitchToNewModal open={switchOpen} onClose={() => setSwitchOpen(false)} />
     </nav>
   );
 };
