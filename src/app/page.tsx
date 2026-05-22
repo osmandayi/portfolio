@@ -6,6 +6,7 @@ import Hero from "@/components/hero/Hero";
 import Navbar from "@/components/navbar/Navbar";
 import Project from "@/components/projects/Project";
 import { LanguageProvider } from "@/context/language";
+import LegacyOptInModal from "@/components/modals/LegacyOptInModal";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
           </div>
           <Footer />
         </main>
+        <LegacyOptInModal />
       </LanguageProvider>
     </>
   );

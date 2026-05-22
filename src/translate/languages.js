@@ -59,6 +59,17 @@ export const languages = [
         medScriptProjectDesc: 'Bu proje, ilaçların birbirleriyle olan potansiyel yan etkileşimlerini analiz ederek güvenli bir kullanım sağlar.',
         medScriptProjectTitle: 'Medscript',
         anonymous: 'Anonim',
+
+        // Cross-site bridge (modals & navbar button)
+        legacyModalTitle: "Yeni sürüm yayında!",
+        legacyModalBody: "Modern, IDE temalı yeni portfolyom hazır. Bu eski sürümü kullanmaya devam etmek istediğinizden emin misiniz?",
+        legacyModalTryNew: "Yeni sürümü aç",
+        legacyModalKeepOld: "Eski sürümle devam",
+        switchNewTooltip: "Yeni sürüme geç",
+        switchNewTitle: "Yeni sürüme geçilsin mi?",
+        switchNewBody: "Modern arayüzlü yeni portfolyoya yönlendirileceksiniz. Devam edilsin mi?",
+        switchNewConfirm: "Evet, götür",
+        switchNewCancel: "İptal",
     },
     {
         id: 2,
@@ -120,5 +131,16 @@ export const languages = [
         medScriptProjectDesc: 'This project analyzes potential interactions between medications, ensuring safe usage.',
         medScriptProjectTitle: 'Medscript',
         anonymous: 'Anonymous',
+
+        // Cross-site bridge (modals & navbar button)
+        legacyModalTitle: "A new version is live!",
+        legacyModalBody: "My modernized IDE-themed portfolio is ready. Are you sure you want to keep using this older version?",
+        legacyModalTryNew: "Open the new version",
+        legacyModalKeepOld: "Stay on the old one",
+        switchNewTooltip: "Try the new version",
+        switchNewTitle: "Switch to the new version?",
+        switchNewBody: "You'll be redirected to the modernized portfolio. Continue?",
+        switchNewConfirm: "Yes, take me there",
+        switchNewCancel: "Cancel",
     },
 ]
